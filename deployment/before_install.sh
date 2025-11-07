@@ -28,4 +28,7 @@ echo "Cleaning up existing containers..."
 sudo docker stop ecommerce-app 2>/dev/null || true
 sudo docker rm ecommerce-app 2>/dev/null || true
 
+# Kill any process using port 80
+sudo fuser -k 80/tcp 2>/dev/null || true
+
 echo "Before install phase completed successfully"
