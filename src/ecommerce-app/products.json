@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "AWS Cloud Practitioner Guide",
+    "category": "books",
+    "price": 29.99,
+    "description": "Complete guide to AWS Cloud Practitioner certification with hands-on examples",
+    "icon": "fas fa-book"
+  },
+  {
+    "id": 2,
+    "name": "DevOps Toolkit",
+    "category": "electronics",
+    "price": 199.99,
+    "description": "Essential tools and software for modern DevOps practices and CI/CD pipelines",
+    "icon": "fas fa-tools"
+  },
+  {
+    "id": 3,
+    "name": "Cloud Engineer T-Shirt",
+    "category": "clothing",
+    "price": 24.99,
+    "description": "Comfortable cotton t-shirt perfect for cloud engineers and developers",
+    "icon": "fas fa-tshirt"
+  },
+  {
+    "id": 4,
+    "name": "Kubernetes Handbook",
+    "category": "books",
+    "price": 34.99,
+    "description": "Master container orchestration with Kubernetes - from basics to advanced",
+    "icon": "fas fa-book-open"
+  },
+  {
+    "id": 5,
+    "name": "CI/CD Pipeline Laptop",
+    "category": "electronics",
+    "price": 899.99,
+    "description": "High-performance laptop optimized for development and CI/CD workflows",
+    "icon": "fas fa-laptop"
+  },
+  {
+    "id": 6,
+    "name": "Docker Hoodie",
+    "category": "clothing",
+    "price": 39.99,
+    "description": "Warm and comfortable hoodie featuring Docker containerization theme",
+    "icon": "fas fa-user-tie"
+  },
+  {
+    "id": 7,
+    "name": "Terraform Infrastructure Guide",
+    "category": "books",
+    "price": 32.99,
+    "description": "Learn Infrastructure as Code with Terraform - practical examples included",
+    "icon": "fas fa-code"
+  },
+  {
+    "id": 8,
+    "name": "Monitoring Dashboard Kit",
+    "category": "electronics",
+    "price": 299.99,
+    "description": "Complete monitoring solution with real-time dashboards and alerting",
+    "icon": "fas fa-chart-line"
+  },
+  {
+    "id": 9,
+    "name": "CodePipeline Mug",
+    "category": "clothing",
+    "price": 14.99,
+    "description": "Start your day with coffee in this AWS CodePipeline themed mug",
+    "icon": "fas fa-coffee"
+  },
+  {
+    "id": 10,
+    "name": "Serverless Architecture Book",
+    "category": "books",
+    "price": 28.99,
+    "description": "Build scalable applications with serverless architecture patterns",
+    "icon": "fas fa-server"
+  },
+  {
+    "id": 11,
+    "name": "Cloud Security Scanner",
+    "category": "electronics",
+    "price": 149.99,
+    "description": "Automated security scanning tool for cloud infrastructure",
+    "icon": "fas fa-shield-alt"
+  },
+  {
+    "id": 12,
+    "name": "DevOps Engineer Cap",
+    "category": "clothing",
+    "price": 19.99,
+    "description": "Stylish cap for DevOps engineers - perfect for casual wear",
+    "icon": "fas fa-hat-cowboy"
+  }
+]

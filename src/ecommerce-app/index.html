@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudMart - Docker E-Commerce Platform v2.0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shopping-bag"></i>
+                <span>CloudMart</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to CloudMart</h1>
+                <p>Your one-stop shop for amazing products with seamless CI/CD deployment</p>
+                <div class="deployment-info">
+                    <i class="fas fa-rocket"></i>
+                    <span>Deployed via AWS CodePipeline</span>
+                    <span id="deploymentTime"></span>
+                </div>
+                <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="electronics">Electronics</button>
+                <button class="filter-btn" data-category="clothing">Clothing</button>
+                <button class="filter-btn" data-category="books">Books</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fas fa-credit-card"></i>
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About CloudMart</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>CI/CD Pipeline</h3>
+                    <p>Automated deployment using AWS CodePipeline, CodeBuild, and CodeDeploy for seamless updates.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Native</h3>
+                    <p>Built on AWS infrastructure with EC2, Application Load Balancer, and auto-scaling capabilities.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Reliable</h3>
+                    <p>Implemented with security best practices, IAM roles, and comprehensive monitoring.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Optimized for all devices with modern web technologies and user-friendly interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline Status -->
+    <section class="pipeline-status">
+        <div class="container">
+            <h3>Deployment Pipeline Status</h3>
+            <div class="pipeline-stages">
+                <div class="stage">
+                    <i class="fab fa-github"></i>
+                    <span>Source</span>
+                    <div class="status-indicator success"></div>
+                </div>
+                <div class="stage">
+                    <i class="fas fa-hammer"></i>
+                    <span>Build</span>
+                    <div class="status-indicator success"></div>
+                </div>
+                <div class="stage">
+                    <i class="fas fa-rocket"></i>
+                    <span>Deploy</span>
+                    <div class="status-indicator success"></div>
+                </div>
+            </div>
+            <div class="pipeline-info">
+                <p><strong>Last Deployment:</strong> <span id="lastDeployment">Just now</span></p>
+                <p><strong>Build Version:</strong> <span id="buildVersion">v1.0.0</span></p>
+                <p><strong>Environment:</strong> <span id="environment">Production</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@cloudmart.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Cloud Street, AWS City, USA</span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CloudMart</h4>
+                    <p>Your trusted e-commerce platform powered by AWS CI/CD pipeline.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>AWS CodePipeline</li>
+                        <li>AWS CodeBuild</li>
+                        <li>AWS CodeDeploy</li>
+                        <li>Amazon EC2</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CloudMart. All rights reserved. | Deployed with AWS CI/CD Pipeline</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Health Check Endpoint (Hidden) -->
+    <div id="health-status" style="display: none;">
+        <span id="health-message">OK</span>
+        <span id="health-timestamp"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
