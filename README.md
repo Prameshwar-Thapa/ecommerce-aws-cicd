@@ -1,9 +1,21 @@
 # CI/CD Pipeline for E-Commerce Platform with Docker
 
+**Production-ready containerized e-commerce application demonstrating modern DevOps practices**
+
+- **Cloud-Native Architecture**: Dockerized application with AWS container orchestration
+- **Complete CI/CD Pipeline**: Automated GitHub to AWS deployment workflow  
+- **Container Management**: ECR registry with automated Docker image builds
+- **AWS Integration**: CodePipeline, CodeBuild, CodeDeploy with EC2 deployment
+- **Infrastructure as Code**: Automated deployment scripts and configuration management
+
 ## 🎯 Project Overview
 This project demonstrates a complete CI/CD pipeline for an e-commerce platform using Docker containers deployed to AWS EC2. The pipeline automatically builds Docker images, tests them, and deploys containerized applications from GitHub to EC2 instances.
 
 ## 🏗️ Architecture
+
+![Application Screenshot](Screentshot%20of%20website.png)
+
+**CI/CD Pipeline Flow:**
 ```
 GitHub Repository → CodePipeline → CodeBuild → CodeDeploy → EC2 (Docker Containers)
        ↓                ↓              ↓              ↓
