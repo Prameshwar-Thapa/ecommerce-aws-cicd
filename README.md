@@ -13,14 +13,14 @@ This project demonstrates a complete CI/CD pipeline for an e-commerce platform u
 
 ## 🏗️ Architecture
 
-![Application Screenshot](Screentshot%20of%20website.png)
+![CI/CD Architecture](generated-diagrams/architecture-diagram.png)
 
 **CI/CD Pipeline Flow:**
 ```
-GitHub Repository → CodePipeline → CodeBuild → CodeDeploy → EC2 (Docker Containers)
-       ↓                ↓              ↓              ↓
-   Source Code    Build Docker    Test Container   Deploy Container
-                     Image                         to Production
+Developer → GitHub → CodePipeline → CodeBuild → ECR/S3 → CodeDeploy → EC2 (Docker)
+    ↓           ↓           ↓            ↓         ↓         ↓          ↓
+ git push   webhook    orchestrate   build &    store    deploy   containerized
+                                     test     artifacts           application
 ```
 
 ## 🛠️ Technologies Used
@@ -72,6 +72,9 @@ cicd-ecommerce-pipeline/
 - **Search Functionality**: Find products quickly
 - **Order Summary**: Review items before checkout
 - **Dockerized Deployment**: Containerized for consistent deployment
+
+## 🖥️ Application Demo
+![Application Screenshot](Screentshot%20of%20website.png)
 
 ## 🎓 Learning Outcomes
 - Docker containerization and deployment
